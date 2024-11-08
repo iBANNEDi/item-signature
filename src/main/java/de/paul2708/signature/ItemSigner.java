@@ -38,7 +38,11 @@ public class ItemSigner {
             meta.setLore(realSignature);
         }
 
-        item.setItemMeta(meta);
+        if (isSigned(item) == true){
+             player.sendMessage("§cПредмет уже подписан!");    
+        } else {
+            item.setItemMeta(meta);
+        }
     }
 
     public boolean isSigned(ItemStack item) {
